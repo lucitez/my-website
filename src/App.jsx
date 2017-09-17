@@ -73,6 +73,8 @@ class App extends Component {
                     key={index}
                     isActive={this.state.activeTab === tab}
                     onClick={(newTab) => this.onTabClick(newTab)}
+                    orientation='vertical'
+                    hover
                   />
                 ))}
               </Nav>

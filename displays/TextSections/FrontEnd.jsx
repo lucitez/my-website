@@ -17,13 +17,14 @@ const FrontEnd = () => {
           </div>
         </div>
       <div>
-        Before the summer of 2017, front end was a bit of a mystery to me. However,
-        it didn’t take long for me to fall in love, thanks to React. I began by taking a few
-        online courses but eventually just dove into the codebase for perks.work
-        (see Portfolio) guided by an engineer working on the project. This summer
+        During the summer of 2017, I went from avoiding front end web programming
+        to building my own website from scratch. This change was thanks to my
+        constant exposure to React this summer. I assisted the lead front end
+        engineer while working on a project called Perks, which you can find out
+        more about in the portfolio section. This summer
         is the only experience I have with React, but I spent more than half of my time
         immersed in the language, and developed a strong grasp of its strengths and
-        weaknesses. This website was built using React.
+        weaknesses.
       </div>
       <div className='language'>
         <div className='languageName'>
@@ -70,7 +71,7 @@ const FrontEnd = () => {
         never looked back. It takes all of the confusing, poorly structured aspects
         of CSS and makes things much easier to work with. I am also a believer
         that CSS is very underrated in the creative opportunities it unlocks when
-        it comes to animations.
+        it comes to things like animations.
       </div>
     </div>
   )

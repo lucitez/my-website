@@ -16,7 +16,10 @@ const AboutMe = () => {
         <br />
         I have a passion for front end development, though I have experience
         across the stack. Keep looking around to find out more about me,
-        enjoy! You can find all the code for this website here.
+        enjoy! You can find all the code for this website&nbsp;
+        <a href='https://github.com/lucitez/my-website'>
+        here
+        </a>
       </div>
       <div className='links'>
         <a href='https://www.linkedin.com/in/lucas-gregory-02b9b7aa/'>

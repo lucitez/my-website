@@ -32,7 +32,9 @@ class NavItem extends Component {
     let navItemClass = classNames({
       'navItem': true,
       'is-active': this.state.isActive,
-      [`display-${this.props.display}`]: this.props.display
+      [`display-${this.props.display}`]: this.props.display,
+      [`orientation-${this.props.orientation}`]: this.props.orientation,
+      'hover-effect': this.props.hover
     })
     return (
       <div className={navItemClass} onClick={this._onClick.bind(this)}>

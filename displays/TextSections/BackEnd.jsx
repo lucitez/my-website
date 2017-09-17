@@ -18,13 +18,12 @@ const BackEnd = () => {
       </div>
       <div>
         When it comes to most lines of code written, Java definitely takes the cake
-        for me by a long shot. Object-Oriented is my favorite method to utilize
-        when programming back-end, so it's easy to see why I fell in love with the
-        language. I have come a long way, from my first major project creating
-        a tanks game my Sophomore year of college to creating the entire back end for
-        a web app called article.fm (see portfolio) this summer. Created entirely
-        using Java (other than some XML for database purposes), I utilized a Spring
-        framework with Maven and JPA to create an efficient, coherent RESTful API.
+        for me by a long shot. I prefer utilizing object oriented methodologies when
+        programming, so it's no surprise I have such an affinity for Java.
+        My first major project in Java was a tanks game I created with a team of four
+        during my Sophomore year of college. Most recently, I created the entire back end for
+        a web app called article.fm, which you can find out more about in the portfolio
+        section of this site.
       </div>
       <div className='language'>
         <div className='languageName'>
@@ -36,10 +35,7 @@ const BackEnd = () => {
         </div>
       </div>
       <div>
-        Python is the first language I ever learned, and it had quite an impact on me.
-        It was in my intro CS classes where I used python to gain an understanding of
-        data structures and algorithms at an intermediate level, upon which I built
-        my capabilities with other languages. I have completed a few really cool projects
+        I have completed a few really cool projects
         using Python, including two of my favorites. One was a&nbsp;
         <a href='https://github.com/lucitez/Connect4'>Connect 4 Game</a> complete with
         some basic AI. Another was a data visualization of concentration of Twitter Phrases
