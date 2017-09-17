@@ -1,0 +1,42 @@
+//@import '../../src/main.scss';
+
+.portfolio {
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  .perks {
+    display: none;
+    overflow-y: hidden;
+  }
+
+  .article {
+    display: none;
+    overflow-y: hidden;
+  }
+
+  .spaceCat {
+    display: none;
+    overflow-y: hidden;
+  }
+
+  &.Perks-active {
+    .perks {
+      display: flex;
+      animation: moveTextSectionIn 0.3s ease-in-out;
+    }
+  }
+
+  &.Article-active {
+      .article {
+      display: flex;
+      animation: moveTextSectionIn 0.3s ease-in-out;
+    }
+  }
+
+  &.SpaceCat-active {
+      .spaceCat {
+      display: flex;
+      animation: moveTextSectionIn 0.3s ease-in-out;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.iconGroup {
+  display: flex;
+  padding: 10px;
+  border: solid #003660 2px;
+  border-radius: 0;
+  cursor: pointer;
+  border-color: #003600;
+  transition: all 0.2s ease-in-out;
+
+  &.isActive {
+    border-color: #ee9102;
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+
+  > * {
+    padding: 0 10px;
+  }
+}

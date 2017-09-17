@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+.nav {
+  display: inline-flex;
+  flex-direction: column;
+
+  &.display-horizontal {
+    flex-direction: row;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    padding: 0 20px;
+  }
+}
+
+.navItem {
+  cursor: pointer;
+  padding: 20px 0;
+  text-align: right;
+  font-family: 'Open Sans', sans-serif;
+  white-space: nowrap;
+
+  &.is-active {
+    color: #ee9102;
+  }
+
+  &.display-horizontal {
+    padding: 0;
+  }
+}

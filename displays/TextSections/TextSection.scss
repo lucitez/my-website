@@ -1,0 +1,61 @@
+.bodyText {
+  line-height: 30px;
+  text-align: justify;
+  margin: 0 20px;
+
+  .language {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .languageName {
+      text-transform: uppercase;
+      margin: 15px 0;
+    }
+
+    .proficiency {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #003660;
+      text-shadow: 1px 1px lightgray;
+    }
+  }
+}
+
+.catImages {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+  .catImage {
+    max-height: 280px;
+    width: auto;
+    margin: 10px;
+  }
+}
+
+.image {
+  max-width: 550px;
+  height: auto;
+  margin: 20px;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+
+  .image-mobile {
+    max-height: 400px;
+    width: auto;
+    margin: 20px;
+    align-self: center;
+  }
+}
+
+.caption {
+  font-size: 12px;
+  margin: 0 20px;
+  text-align: center;
+}

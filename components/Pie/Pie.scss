@@ -1,0 +1,50 @@
+.pie {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #003660;
+  display: flex;
+  position: relative;
+  margin: 5px;
+
+  background-image: linear-gradient(90deg, transparent 50%, lighten(#003660, 75) 0);
+  text-align: center;
+
+  &::before {
+    content: '';
+    display: block;
+    margin-left: 50%;
+    height: 100%;
+    width: 50%;
+    border-radius: 0 100% 100% 0 / 50%;
+    border-color: #003660;
+    background-color: inherit;
+    transform-origin: left;
+  }
+
+  &.fifty-percent {
+    &::before{
+      transform: rotate(.5turn);
+    }
+  }
+  &.sixty-percent {
+    &::before{
+      transform: rotate(.4turn);
+    }
+  }
+  &.seventy-percent {
+    &::before{
+      transform: rotate(.3turn);
+    }
+  }
+  &.eighty-percent {
+    &::before{
+      transform: rotate(.2turn);
+    }
+  }
+  &.ninety-percent {
+    &::before{
+      transform: rotate(.1turn);
+    }
+  }
+}

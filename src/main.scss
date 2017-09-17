@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css?family=Titillium+Web');
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+
+.header {
+  background-color: #003660;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-content: center;
+
+  .title {
+    color: #f7fff7;
+    align-self: center;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 40px;
+  }
+}
+
+.body {
+  display: flex;
+  justify-content: center;
+  overflow-y: visible;
+  min-height: 800px;
+
+  .container {
+    display: inline-flex;
+    width: 80%;
+
+    .left-nav {
+      padding: 100px 0 0 150px;
+      display: inline-flex;
+    }
+
+    .content {
+      padding-top: 120px;
+      margin-left: 100px;
+      margin-right: 100px;
+      display: inline-flex;
+      flex-direction: column;
+      font-family: 'Lato', sans-serif;
+      padding-bottom: 100px;
+      width: 100%;
+
+      .aboutme {
+        display: none;
+        animation: moveTextSectionOut 0.3s ease-in-out;
+      }
+
+      &.About.Me-active {
+        .aboutMe {
+          display: flex;
+          animation: moveTextSectionIn 0.3s ease-in-out;
+        }
+      }
+
+      .links {
+        margin: 20px 20px 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      .codeContent {
+
+        .codeGroups {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+
+          .lastCodeGroup{
+            margin-left: 20px;
+          }
+        }
+
+        .FrontEnd {
+          display: none;
+          animation: moveTextSectionOut 0.3s ease-in-out;
+        }
+
+        .BackEnd {
+          display: none;
+          animation: moveTextSectionOut 0.3s ease-in-out;
+        }
+
+        &.FrontEnd-active {
+          .FrontEnd {
+            display: flex;
+            animation: moveTextSectionIn 0.3s ease-in-out;
+          }
+        }
+
+        &.BackEnd-active {
+          .BackEnd {
+            display: flex;
+            animation: moveTextSectionIn 0.3s ease-in-out;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes moveTextSectionIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  20% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes moveTextSectionOut {
+  0% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+}

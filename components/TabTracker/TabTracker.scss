@@ -1,0 +1,45 @@
+$translation: attr(translation);
+
+.tabTracker {
+  position: relative;
+  width: 100%;
+  display: flex;
+  transition: all 0.4s ease-in-out;
+  transform: translateX(4.5%);
+  border-bottom: solid 2px black;
+  margin-bottom: 20px;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border-bottom: solid black 2px;
+    right: 100%;
+  }
+
+  &.options-2 {
+    &.option-2 {
+      transform: translateX(88%);
+    }
+  }
+
+  &.options-3 {
+    &.option-2{
+      transform: translateX(45%);
+    }
+    &.option-3 {
+      transform: translateX(88%);
+    }
+  }
+
+  .triangle {
+    padding-top: 10px;
+    position: relative;
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 15px solid black;
+  }
+}
