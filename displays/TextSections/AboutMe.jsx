@@ -13,7 +13,9 @@ const AboutMe = () => {
         I'm from Los Angeles, California. I like to spend my free time playing
         and watching soccer, listening to music, and watching movies and cartoons.
         <br />
+      </div>
         <br />
+      <div className='bodyText'>
         I have a passion for front end development, though I have experience
         across the stack. Keep looking around to find out more about me,
         enjoy! You can find all the code for this website&nbsp;

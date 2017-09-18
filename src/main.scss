@@ -7,12 +7,20 @@
   height: 100px;
   justify-content: center;
   align-content: center;
+  align-items: center;
 
   .title {
     color: #f7fff7;
     align-self: center;
     font-family: 'Titillium Web', sans-serif;
     font-size: 40px;
+  }
+
+  .portrait {
+    height: 70px;
+    width: auto;
+    border-radius: 50%;
+    margin: 0 10px;
   }
 }
 

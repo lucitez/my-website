@@ -10940,10 +10940,12 @@ var NavItem = function (_Component) {
   }, {
     key: 'render',
     value: function render() {
-      var navItemClass = (0, _classnames2.default)(_defineProperty({
+      var _classNames;
+
+      var navItemClass = (0, _classnames2.default)((_classNames = {
         'navItem': true,
         'is-active': this.state.isActive
-      }, 'display-' + this.props.display, this.props.display));
+      }, _defineProperty(_classNames, 'display-' + this.props.display, this.props.display), _defineProperty(_classNames, 'orientation-' + this.props.orientation, this.props.orientation), _defineProperty(_classNames, 'hover-effect', this.props.hover), _classNames));
       return _react2.default.createElement(
         'div',
         { className: navItemClass, onClick: this._onClick.bind(this) },
@@ -23598,7 +23600,9 @@ var App = function (_Component) {
                     isActive: _this2.state.activeTab === tab,
                     onClick: function onClick(newTab) {
                       return _this2.onTabClick(newTab);
-                    }
+                    },
+                    orientation: 'vertical',
+                    hover: true
                   });
                 })
               )
@@ -23745,7 +23749,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, ".nav {\n  display: inline-flex;\n  flex-direction: column; }\n  .nav.display-horizontal {\n    flex-direction: row;\n    justify-content: space-between;\n    width: -webkit-fill-available;\n    padding: 0 20px; }\n\n.navItem {\n  cursor: pointer;\n  padding: 20px 0;\n  text-align: right;\n  font-family: 'Open Sans', sans-serif;\n  white-space: nowrap; }\n  .navItem.is-active {\n    color: #ee9102; }\n  .navItem.display-horizontal {\n    padding: 0; }\n", ""]);
+exports.push([module.i, ".nav {\n  display: inline-flex;\n  flex-direction: column; }\n  .nav.display-horizontal {\n    flex-direction: row;\n    justify-content: space-between;\n    width: -webkit-fill-available;\n    padding: 0 20px; }\n\n.navItem {\n  cursor: pointer;\n  padding: 20px 0;\n  text-align: right;\n  font-family: 'Open Sans', sans-serif;\n  white-space: nowrap; }\n  .navItem.is-active {\n    color: #ee9102; }\n  .navItem.display-horizontal {\n    padding: 0; }\n  .navItem.hover-effect.orientation-vertical:hover {\n    transform: translateX(-5px);\n    transition: all 0.1s ease-in-out;\n    overflow-x: hidden; }\n", ""]);
 
 // exports
 
@@ -24490,7 +24494,7 @@ var Article = function Article() {
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'Another project I worked on was article.fm. It\u2019s a platform for the aggregation and organization of articles pulled from multiple sources across the web. Here\u2019s the twist - rather than displaying the articles to be read by the consumer, it is instead converted to audio and played for them, providing a unique, hands and eyes-free experience.'
+      'Another project I worked on while working at Rich Uncles was article.fm. It\u2019s a platform for the aggregation and organization of articles pulled from multiple sources across the web. Here\u2019s the twist - rather than displaying the articles to be read by the consumer, it is instead converted to audio and played for them, providing a unique, hands and eyes-free experience.'
     ),
     _react2.default.createElement('img', {
       className: 'image',
@@ -24499,7 +24503,7 @@ var Article = function Article() {
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'I built this web app from the ground up, using RESTful practices and a springboot framework. I used a number of libraries to help crawl and scrape articles (crawler4j and Jsoup respectively), and AWS to convert articles from text to SSML to audio. I used Java and mysql to create the backend, and ReactJS for the front end, keeping mobile responsiveness in mind.'
+      'I built this web app from the ground up, developing both client and server side, using RESTful practices and a springboot framework. I used a number of libraries to help crawl and scrape articles (crawler4j and Jsoup respectively), and AWS to convert articles from text to SSML to audio. I used Java and mysql to create the backend, and ReactJS for the front end, keeping mobile responsiveness in mind.'
     ),
     _react2.default.createElement(
       'div',
@@ -24615,7 +24619,7 @@ var FrontEnd = function FrontEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'Before the summer of 2017, front end was a bit of a mystery to me. However, it didn\u2019t take long for me to fall in love, thanks to React. I began by taking a few online courses but eventually just dove into the codebase for perks.work (see Portfolio) guided by an engineer working on the project. This summer is the only experience I have with React, but I spent more than half of my time immersed in the language, and developed a strong grasp of its strengths and weaknesses. This website was built using React.'
+      'During the summer of 2017, I went from avoiding front end web programming to building my own website from scratch. This change was thanks to my constant exposure to React this summer. I assisted the lead front end engineer while working on a project called Perks, which you can find out more about in the portfolio section. This summer is the only experience I have with React, but I spent more than half of my time immersed in the language, and developed a strong grasp of its strengths and weaknesses.'
     ),
     _react2.default.createElement(
       'div',
@@ -24675,7 +24679,7 @@ var FrontEnd = function FrontEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'I have been honing my CSS skills over the past year or so and seen a significant amount of improvement in my capabilities. Since learning about Sass, I\'ve never looked back. It takes all of the confusing, poorly structured aspects of CSS and makes things much easier to work with. I am also a believer that CSS is very underrated in the creative opportunities it unlocks when it comes to animations.'
+      'I have been honing my CSS skills over the past year or so and seen a significant amount of improvement in my capabilities. Since learning about Sass, I\'ve never looked back. It takes all of the confusing, poorly structured aspects of CSS and makes things much easier to work with. I am also a believer that CSS is very underrated in the creative opportunities it unlocks when it comes to things like animations.'
     )
   );
 };
@@ -24727,7 +24731,7 @@ var BackEnd = function BackEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'When it comes to most lines of code written, Java definitely takes the cake for me by a long shot. Object-Oriented is my favorite method to utilize when programming back-end, so it\'s easy to see why I fell in love with the language. I have come a long way, from my first major project creating a tanks game my Sophomore year of college to creating the entire back end for a web app called article.fm (see portfolio) this summer. Created entirely using Java (other than some XML for database purposes), I utilized a Spring framework with Maven and JPA to create an efficient, coherent RESTful API.'
+      'When it comes to most lines of code written, Java definitely takes the cake for me by a long shot. I prefer utilizing object oriented methodologies when programming, so it\'s no surprise I have such an affinity for Java. My first major project in Java was a tanks game I created with a team of four during my Sophomore year of college. Most recently, I created the entire back end for a web app called article.fm, which you can find out more about in the portfolio section of this site.'
     ),
     _react2.default.createElement(
       'div',
@@ -24747,7 +24751,7 @@ var BackEnd = function BackEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'Python is the first language I ever learned, and it had quite an impact on me. It was in my intro CS classes where I used python to gain an understanding of data structures and algorithms at an intermediate level, upon which I built my capabilities with other languages. I have completed a few really cool projects using Python, including two of my favorites. One was a\xA0',
+      'I have completed a few really cool projects using Python, including two of my favorites. One was a\xA0',
       _react2.default.createElement(
         'a',
         { href: 'https://github.com/lucitez/Connect4' },
@@ -24810,10 +24814,15 @@ var AboutMe = function AboutMe() {
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'Hi there, thanks for visiting my site! I am a Senior at Bucknell University majoring in Computer Science and Engineering. I\'m from Los Angeles, California. I like to spend my free time playing and watching soccer, listening to music, and watching movies and cartoons.',
+      'Hi there, thanks for visiting my site! I am a Senior at Bucknell University, majoring in Computer Science and Engineering. I\'m from Los Angeles, California. I like to spend my free time playing and watching soccer, listening to music, and watching movies and cartoons.',
       _react2.default.createElement('br', null),
       _react2.default.createElement('br', null),
-      'I have a passion for front end development, though I have experience across the stack. Keep looking around to find out more about me, enjoy!'
+      'I have a passion for front end development, though I have experience across the stack. Keep looking around to find out more about me, enjoy! You can find all the code for this website\xA0',
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/lucitez/my-website' },
+        'here'
+      )
     ),
     _react2.default.createElement(
       'div',

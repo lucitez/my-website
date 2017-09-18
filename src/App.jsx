@@ -62,6 +62,12 @@ class App extends Component {
       <div>
         <div className='header'>
           <div className='title'>Lucas Gregory</div>
+          <div className='portrait'>
+            <img
+              src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png'
+              className='image portrait'
+            />
+          </div>
         </div>
         <div className='body'>
           <div className='container'>
