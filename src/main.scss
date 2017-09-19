@@ -34,25 +34,31 @@
   overflow-y: visible;
   min-height: 800px;
 
+  @media only screen and (max-width: 1000px) {
+    .container {
+      max-width: 80% !important;
+    }
+  }
+
   .container {
-    display: inline-flex;
-    width: 80%;
+    display: flex;
+    max-width: 60%;
+    padding-top: 120px;
+    overflow: visible;
+
 
     .left-nav {
-      padding: 100px 0 0 150px;
+      padding: 5px 0;
       display: inline-flex;
-      max-height: 160px;
+      max-height: 140px;
     }
 
     .content {
-      padding-top: 120px;
       margin-left: 100px;
-      margin-right: 100px;
       display: inline-flex;
       flex-direction: column;
       font-family: 'Lato', sans-serif;
       padding-bottom: 100px;
-      width: 100%;
 
       .aboutme {
         display: none;
@@ -113,6 +119,7 @@
     }
   }
 }
+
 
 @keyframes moveTextSectionIn {
   0% {
