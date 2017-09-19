@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Pie from '../../components/Pie/Pie.jsx'
+import ProficiencyBar from '../../components/ProficiencyBar/ProficiencyBar.jsx'
 
 import './TextSection.scss'
 
@@ -12,8 +12,7 @@ const BackEnd = () => {
           Java
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='ninety' />
+          <ProficiencyBar percentage='90' />
         </div>
       </div>
       <div>
@@ -30,8 +29,7 @@ const BackEnd = () => {
           Python
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='seventy' />
+          <ProficiencyBar percentage='70' />
         </div>
       </div>
       <div>
@@ -46,8 +44,7 @@ const BackEnd = () => {
           Swift
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='eighty' />
+          <ProficiencyBar percentage='80' />
         </div>
       </div>
       <div>

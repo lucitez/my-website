@@ -7,6 +7,12 @@ import './TextSection.scss'
 const AboutMe = () => {
   return (
     <div>
+      <div className='portrait'>
+        <img
+          src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png'
+          className='image portrait'
+        />
+      </div>
       <div className='bodyText'>
         Hi there, thanks for visiting my site! I am a Senior at
         Bucknell University, majoring in Computer Science and Engineering.

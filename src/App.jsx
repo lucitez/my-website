@@ -49,7 +49,6 @@ class App extends Component {
   }
 
   render () {
-    console.log(this.state.activeCodeGroup)
     let codeContentClass = classNames({
       'codeContent': true,
       [`${this.state.activeCodeGroup}-active`]: this.state.activeCodeGroup
@@ -61,12 +60,6 @@ class App extends Component {
     return (
       <div>
         <div className='header'>
-          <div className='portrait'>
-            <img
-              src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png'
-              className='image portrait'
-            />
-          </div>
           <div className='title'>Lucas Gregory</div>
         </div>
         <div className='body'>

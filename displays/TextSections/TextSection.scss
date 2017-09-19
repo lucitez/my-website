@@ -6,20 +6,20 @@
   .language {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: left;
     align-items: center;
+    width: 100%;
 
     .languageName {
       text-transform: uppercase;
       margin: 15px 0;
+      white-space: nowrap;
     }
 
     .proficiency {
       display: flex;
-      flex-direction: row;
-      align-items: center;
-      color: #003660;
-      text-shadow: 1px 1px lightgray;
+      padding-left: 20px;
+      width: 100%;
     }
   }
 }
@@ -40,6 +40,14 @@
   max-width: 550px;
   height: auto;
   margin: 20px;
+}
+
+.portrait {
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  float: right;
+  margin: 5px 10px 0 50px;
 }
 
 .image-container {

@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Pie from '../../components/Pie/Pie.jsx'
+import ProficiencyBar from '../../components/ProficiencyBar/ProficiencyBar.jsx'
 
 import './TextSection.scss'
 
@@ -12,8 +12,7 @@ const FrontEnd = () => {
           React
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='ninety' />
+          <ProficiencyBar percentage='90' />
           </div>
         </div>
       <div>
@@ -31,8 +30,7 @@ const FrontEnd = () => {
           Redux
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='fifty' />
+          <ProficiencyBar percentage='50' />
         </div>
       </div>
       <div>
@@ -46,8 +44,7 @@ const FrontEnd = () => {
           HTML
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='eighty' />
+          <ProficiencyBar percentage='80' />
         </div>
       </div>
       <div>
@@ -61,8 +58,7 @@ const FrontEnd = () => {
           CSS / Sass
         </div>
         <div className='proficiency'>
-          proficiency:
-          <Pie percentage='ninety' />
+          <ProficiencyBar percentage='90' />
         </div>
       </div>
       <div>
