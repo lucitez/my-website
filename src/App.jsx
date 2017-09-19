@@ -61,18 +61,18 @@ class App extends Component {
     return (
       <div>
         <div className='header'>
-          <div className='title'>Lucas Gregory</div>
           <div className='portrait'>
             <img
               src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png'
               className='image portrait'
             />
           </div>
+          <div className='title'>Lucas Gregory</div>
         </div>
         <div className='body'>
           <div className='container'>
             <div className='left-nav'>
-              <Nav>
+              <Nav orientation='vertical'>
                 {leftNavItems.map((tab, index) => (
                   <NavItem
                     value={tab}

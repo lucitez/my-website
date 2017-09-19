@@ -7185,6 +7185,10 @@ var Pie = function Pie(_ref) {
   return _react2.default.createElement('div', { className: pieClass });
 };
 
+Pie.PropTypes = {
+  percentage: _propTypes2.default.oneOf(['fifty', 'sixty', 'seventy', 'eighty', 'ninety', 'onehundred']).isRequired
+};
+
 exports.default = Pie;
 
 /***/ }),
@@ -10945,7 +10949,7 @@ var NavItem = function (_Component) {
       var navItemClass = (0, _classnames2.default)((_classNames = {
         'navItem': true,
         'is-active': this.state.isActive
-      }, _defineProperty(_classNames, 'display-' + this.props.display, this.props.display), _defineProperty(_classNames, 'orientation-' + this.props.orientation, this.props.orientation), _defineProperty(_classNames, 'hover-effect', this.props.hover), _classNames));
+      }, _defineProperty(_classNames, 'orientation-' + this.props.orientation, this.props.orientation), _defineProperty(_classNames, 'hover-effect', this.props.hover), _classNames));
       return _react2.default.createElement(
         'div',
         { className: navItemClass, onClick: this._onClick.bind(this) },
@@ -10956,6 +10960,13 @@ var NavItem = function (_Component) {
 
   return NavItem;
 }(_react.Component);
+
+NavItem.propTypes = {
+  isActive: _propTypes2.default.bool,
+  orientation: _propTypes2.default.oneOf(['vertical', 'horizontal']),
+  hover: _propTypes2.default.bool,
+  value: _propTypes2.default.string
+};
 
 exports.default = NavItem;
 
@@ -11041,7 +11052,7 @@ var Nav = function (_Component) {
     value: function render() {
       var navClass = (0, _classnames2.default)(_defineProperty({
         'nav': true
-      }, 'display-' + this.props.display, this.props.display));
+      }, 'orientation-' + this.props.orientation, this.props.orientation));
       return _react2.default.createElement(
         'div',
         { className: navClass },
@@ -11052,6 +11063,15 @@ var Nav = function (_Component) {
 
   return Nav;
 }(_react.Component);
+
+Nav.defaultProps = {
+  orientation: 'vertical'
+};
+
+Nav.propTypes = {
+  orientation: _propTypes2.default.oneOf(['horizontal', 'vertical']),
+  children: _propTypes2.default.any
+};
 
 exports.default = Nav;
 
@@ -23577,6 +23597,14 @@ var App = function (_Component) {
           { className: 'header' },
           _react2.default.createElement(
             'div',
+            { className: 'portrait' },
+            _react2.default.createElement('img', {
+              src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png',
+              className: 'image portrait'
+            })
+          ),
+          _react2.default.createElement(
+            'div',
             { className: 'title' },
             'Lucas Gregory'
           )
@@ -23592,7 +23620,7 @@ var App = function (_Component) {
               { className: 'left-nav' },
               _react2.default.createElement(
                 _Nav2.default,
-                null,
+                { orientation: 'vertical' },
                 leftNavItems.map(function (tab, index) {
                   return _react2.default.createElement(_NavItem2.default, {
                     value: tab,
@@ -23749,7 +23777,7 @@ exports = module.exports = __webpack_require__(16)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, ".nav {\n  display: inline-flex;\n  flex-direction: column; }\n  .nav.display-horizontal {\n    flex-direction: row;\n    justify-content: space-between;\n    width: -webkit-fill-available;\n    padding: 0 20px; }\n\n.navItem {\n  cursor: pointer;\n  padding: 20px 0;\n  text-align: right;\n  font-family: 'Open Sans', sans-serif;\n  white-space: nowrap; }\n  .navItem.is-active {\n    color: #ee9102; }\n  .navItem.display-horizontal {\n    padding: 0; }\n  .navItem.hover-effect.orientation-vertical:hover {\n    transform: translateX(-5px);\n    transition: all 0.1s ease-in-out;\n    overflow-x: hidden; }\n", ""]);
+exports.push([module.i, ".nav {\n  display: inline-flex; }\n  .nav.orientation-horizontal {\n    flex-direction: row;\n    padding: 0 20px;\n    justify-content: space-between;\n    width: -webkit-fill-available; }\n  .nav.orientation-vertical {\n    flex-direction: column;\n    padding: 20px 0;\n    justify-content: space-between; }\n\n.navItem {\n  cursor: pointer;\n  padding: 0;\n  text-align: right;\n  font-family: 'Open Sans', sans-serif;\n  white-space: nowrap; }\n  .navItem.is-active {\n    color: #ee9102; }\n  .navItem.hover-effect.orientation-vertical:hover {\n    transform: translateX(-10px);\n    transition: all 0.1s ease-in-out; }\n  .navItem.hover-effect.orientation-horizontal:hover {\n    transform: translateY(-5px);\n    transition: all 0.1s ease-in-out; }\n", ""]);
 
 // exports
 
@@ -24172,12 +24200,11 @@ var Portfolio = function (_Component) {
         { className: portfolioClass },
         _react2.default.createElement(
           _Nav2.default,
-          { display: 'horizontal' },
+          { orientation: 'horizontal' },
           portfolioItems.map(function (tab, index) {
             return _react2.default.createElement(_NavItem2.default, {
               value: tab,
               key: index,
-              display: 'horizontal',
               isActive: _this2.state.currentTab === tab,
               onClick: function onClick(newTab) {
                 return _this2.onTabClick(newTab);
@@ -24815,14 +24842,19 @@ var AboutMe = function AboutMe() {
       'div',
       { className: 'bodyText' },
       'Hi there, thanks for visiting my site! I am a Senior at Bucknell University, majoring in Computer Science and Engineering. I\'m from Los Angeles, California. I like to spend my free time playing and watching soccer, listening to music, and watching movies and cartoons.',
-      _react2.default.createElement('br', null),
-      _react2.default.createElement('br', null),
+      _react2.default.createElement('br', null)
+    ),
+    _react2.default.createElement('br', null),
+    _react2.default.createElement(
+      'div',
+      { className: 'bodyText' },
       'I have a passion for front end development, though I have experience across the stack. Keep looking around to find out more about me, enjoy! You can find all the code for this website\xA0',
       _react2.default.createElement(
         'a',
         { href: 'https://github.com/lucitez/my-website' },
         'here'
-      )
+      ),
+      '.'
     ),
     _react2.default.createElement(
       'div',
@@ -24840,7 +24872,7 @@ var AboutMe = function AboutMe() {
       _react2.default.createElement(
         'div',
         { className: 'email' },
-        'lrg006@bucknell.edu'
+        'my email: lrg006@bucknell.edu'
       )
     )
   );
@@ -24889,7 +24921,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Tit
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);", ""]);
 
 // module
-exports.push([module.i, ".header {\n  background-color: #003660;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-content: center; }\n  .header .title {\n    color: #f7fff7;\n    align-self: center;\n    font-family: 'Titillium Web', sans-serif;\n    font-size: 40px; }\n\n.body {\n  display: flex;\n  justify-content: center;\n  overflow-y: visible;\n  min-height: 800px; }\n  .body .container {\n    display: inline-flex;\n    width: 80%; }\n    .body .container .left-nav {\n      padding: 100px 0 0 150px;\n      display: inline-flex; }\n    .body .container .content {\n      padding-top: 120px;\n      margin-left: 100px;\n      margin-right: 100px;\n      display: inline-flex;\n      flex-direction: column;\n      font-family: 'Lato', sans-serif;\n      padding-bottom: 100px;\n      width: 100%; }\n      .body .container .content .aboutme {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content.About.Me-active .aboutMe {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .links {\n        margin: 20px 20px 0;\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        align-items: center; }\n      .body .container .content .codeContent .codeGroups {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around; }\n        .body .container .content .codeContent .codeGroups .lastCodeGroup {\n          margin-left: 20px; }\n      .body .container .content .codeContent .FrontEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent .BackEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent.FrontEnd-active .FrontEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .codeContent.BackEnd-active .BackEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n\n@keyframes moveTextSectionIn {\n  0% {\n    opacity: 0;\n    transform: translateY(10px); }\n  20% {\n    opacity: 0;\n    transform: translateY(8px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0px); } }\n\n@keyframes moveTextSectionOut {\n  0% {\n    opacity: 1;\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    transform: translateY(10px); } }\n", ""]);
+exports.push([module.i, ".header {\n  background-color: #003660;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-content: center;\n  align-items: center; }\n  .header .title {\n    color: #f7fff7;\n    align-self: center;\n    font-family: 'Titillium Web', sans-serif;\n    font-size: 40px; }\n  .header .portrait {\n    height: 70px;\n    width: auto;\n    border-radius: 50%;\n    margin: 0 10px; }\n    .header .portrait img {\n      border: solid white 1px; }\n\n.body {\n  display: flex;\n  justify-content: center;\n  overflow-y: visible;\n  min-height: 800px; }\n  .body .container {\n    display: inline-flex;\n    width: 80%; }\n    .body .container .left-nav {\n      padding: 100px 0 0 150px;\n      display: inline-flex;\n      max-height: 160px; }\n    .body .container .content {\n      padding-top: 120px;\n      margin-left: 100px;\n      margin-right: 100px;\n      display: inline-flex;\n      flex-direction: column;\n      font-family: 'Lato', sans-serif;\n      padding-bottom: 100px;\n      width: 100%; }\n      .body .container .content .aboutme {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content.About.Me-active .aboutMe {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .links {\n        margin: 20px 20px 0;\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        align-items: center; }\n      .body .container .content .codeContent .codeGroups {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around; }\n        .body .container .content .codeContent .codeGroups .lastCodeGroup {\n          margin-left: 20px; }\n      .body .container .content .codeContent .FrontEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent .BackEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent.FrontEnd-active .FrontEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .codeContent.BackEnd-active .BackEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n\n@keyframes moveTextSectionIn {\n  0% {\n    opacity: 0;\n    transform: translateY(10px); }\n  20% {\n    opacity: 0;\n    transform: translateY(8px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0px); } }\n\n@keyframes moveTextSectionOut {\n  0% {\n    opacity: 1;\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    transform: translateY(10px); } }\n", ""]);
 
 // exports
 

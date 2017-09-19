@@ -32,7 +32,6 @@ class NavItem extends Component {
     let navItemClass = classNames({
       'navItem': true,
       'is-active': this.state.isActive,
-      [`display-${this.props.display}`]: this.props.display,
       [`orientation-${this.props.orientation}`]: this.props.orientation,
       'hover-effect': this.props.hover
     })
@@ -42,6 +41,16 @@ class NavItem extends Component {
       </div>
     )
   }
+}
+
+NavItem.propTypes = {
+  isActive: PropTypes.bool,
+  orientation: PropTypes.oneOf([
+    'vertical',
+    'horizontal'
+  ]),
+  hover: PropTypes.bool,
+  value: PropTypes.string
 }
 
 export default NavItem

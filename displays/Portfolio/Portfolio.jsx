@@ -39,12 +39,11 @@ class Portfolio extends Component {
     })
     return (
       <div className={portfolioClass}>
-        <Nav display='horizontal'>
+        <Nav orientation='horizontal'>
           {portfolioItems.map((tab, index) => (
             <NavItem
               value={tab}
               key={index}
-              display='horizontal'
               isActive={this.state.currentTab === tab}
               onClick={(newTab) => this.onTabClick(newTab)}
             />

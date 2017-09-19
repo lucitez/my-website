@@ -16,4 +16,15 @@ const Pie = ({
   )
 }
 
+Pie.PropTypes = {
+  percentage: PropTypes.oneOf([
+    'fifty',
+    'sixty',
+    'seventy',
+    'eighty',
+    'ninety',
+    'onehundred'
+  ]).isRequired
+}
+
 export default Pie

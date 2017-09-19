@@ -21,6 +21,10 @@
     width: auto;
     border-radius: 50%;
     margin: 0 10px;
+
+    img {
+      border: solid white 1px;
+    }
   }
 }
 
@@ -37,6 +41,7 @@
     .left-nav {
       padding: 100px 0 0 150px;
       display: inline-flex;
+      max-height: 160px;
     }
 
     .content {

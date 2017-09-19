@@ -22,6 +22,7 @@ const AboutMe = () => {
         <a href='https://github.com/lucitez/my-website'>
         here
         </a>
+        .
       </div>
       <div className='links'>
         <a href='https://www.linkedin.com/in/lucas-gregory-02b9b7aa/'>
@@ -31,7 +32,7 @@ const AboutMe = () => {
           <Icon name='github' size='md' type='link'/>
         </a>
         <div className='email'>
-          lrg006@bucknell.edu
+          my email: lrg006@bucknell.edu
         </div>
       </div>
     </div>

@@ -8,7 +8,7 @@ class Nav extends Component {
   render() {
     let navClass = classNames({
       'nav': true,
-      [`display-${this.props.display}`]: this.props.display
+      [`orientation-${this.props.orientation}`]: this.props.orientation
     })
     return (
       <div className={navClass}>
@@ -16,6 +16,18 @@ class Nav extends Component {
       </div>
     )
   }
+}
+
+Nav.defaultProps = {
+  orientation: 'vertical'
+}
+
+Nav.propTypes = {
+  orientation: PropTypes.oneOf([
+    'horizontal',
+    'vertical'
+  ]),
+  children: PropTypes.any
 }
 
 export default Nav
