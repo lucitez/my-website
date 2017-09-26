@@ -1,7 +1,7 @@
 .mainBar {
   width: 100%;
   height: 10px;
-  background-color: lighten(#003660, 70);
+  border: solid #003660 1px;
   position: relative;
 
   .proficiencyBar {
