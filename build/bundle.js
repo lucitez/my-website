@@ -24631,7 +24631,7 @@ var Xplor = function Xplor() {
     _react2.default.createElement(
       'div',
       { className: 'xplorGif' },
-      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-signin.gif' }),
+      _react2.default.createElement('img', { className: 'gif', src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-signin.gif' }),
       _react2.default.createElement(
         'div',
         { className: 'feature' },
@@ -24664,12 +24664,12 @@ var Xplor = function Xplor() {
           'When a user is creating a trip, they must provide a trip name, tags, and privacy settings. Tags exist to allow other users to find your trip, and privacy settings limit who can see your trips. From there, add locations by searching or directly through the map.'
         )
       ),
-      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-createtrip.gif' })
+      _react2.default.createElement('img', { className: 'gif', src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-createtrip.gif' })
     ),
     _react2.default.createElement(
       'div',
       { className: 'xplorGif' },
-      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-search.gif' }),
+      _react2.default.createElement('img', { className: 'gif', src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-search.gif' }),
       _react2.default.createElement(
         'div',
         { className: 'feature' },
@@ -24702,12 +24702,12 @@ var Xplor = function Xplor() {
           'If a certain location doesn\'t exist in our database, users can add them. Users can drop a pin at the center of a map, and they will be provided with a list of locations that are around that pin. These locations are filterable by category, and will only appear if they exist in Google\'s Places API. This is to avoid spam location adding.'
         )
       ),
-      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-addpoi.gif' })
+      _react2.default.createElement('img', { className: 'gif', src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-addpoi.gif' })
     ),
     _react2.default.createElement(
       'div',
       { className: 'xplorGif' },
-      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-jointrip.gif' }),
+      _react2.default.createElement('img', { className: 'gif', src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-jointrip.gif' }),
       _react2.default.createElement(
         'div',
         { className: 'feature' },

@@ -14,7 +14,7 @@ const Xplor = () => {
         are some demos of different features in the app.
       </div>
       <div className='xplorGif'>
-        <img className='gif' src='../assets/xplor-signin.gif' />
+        <img className='gif' src='https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-signin.gif' />
         <div className='feature'>
           <div className='header'>
             Login Flow
@@ -40,10 +40,10 @@ const Xplor = () => {
             by searching or directly through the map.
           </div>
         </div>
-        <img className='gif' src='../assets/xplor-createtrip.gif' />
+        <img className='gif' src='https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-createtrip.gif' />
       </div>
       <div className='xplorGif'>
-        <img className='gif' src='../assets/xplor-search.gif' />
+        <img className='gif' src='https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-search.gif' />
         <div className='feature'>
           <div className='header'>
             Search Feature
@@ -70,10 +70,10 @@ const Xplor = () => {
             Places API. This is to avoid spam location adding.
           </div>
         </div>
-        <img className='gif' src='../assets/xplor-addpoi.gif' />
+        <img className='gif' src='https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-addpoi.gif' />
       </div>
       <div className='xplorGif'>
-        <img className='gif' src='../assets/xplor-jointrip.gif' />
+        <img className='gif' src='https://s3-us-west-1.amazonaws.com/lrg.life/images/xplor-jointrip.gif' />
           <div className='feature'>
             <div className='header'>
               Join Trips
