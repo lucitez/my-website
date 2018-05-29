@@ -12,15 +12,15 @@ const BackEnd = () => {
           Java
         </div>
         <div className='proficiency'>
-          <ProficiencyBar percentage='90' />
+          <ProficiencyBar percentage='80' />
         </div>
       </div>
       <div>
-        When it comes to most lines of code written, Java definitely takes the cake
-        for me by a long shot. I prefer utilizing object oriented methodologies when
+        When it comes to most lines of code written, Java stands out by a large margin.
+        I prefer utilizing object oriented methodologies when
         programming, so it's no surprise I have such an affinity for Java.
         My first major project in Java was a tanks game I created with a team of four
-        during my Sophomore year of college. Most recently, I created the entire back end for
+        during my Sophomore year of college. Most recently, I created the back end for
         a web app called article.fm, which you can find out more about in the portfolio
         section of this site.
       </div>
@@ -35,9 +35,9 @@ const BackEnd = () => {
       <div>
         I have completed a few really cool projects
         using Python, including two of my favorites. One was a&nbsp;
-        <a href='https://github.com/lucitez/Connect4'>Connect 4 Game</a> complete with
+        <a href='https://github.com/lucitez/Connect4' target='_blank'>Connect 4 Game</a> complete with
         some basic AI. Another was a data visualization of concentration of Twitter Phrases
-        that I am unfortunately not able to upload on my github.
+        that I am unfortunately not able to upload on my github due to size limitations.
       </div>
       <div className='language'>
         <div className='languageName'>

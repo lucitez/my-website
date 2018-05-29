@@ -4,14 +4,14 @@ import './TextSection.scss'
 
 const Perks = () => {
   return (
-    <div>
+    <div className='textContainer'>
       <div className='bodyText'>
         While working for Rich Uncles, LLC this summer I helped develop
         v1.0 of the web app for Perks, a local business-focused rewards
-        program. The website was built with React using a Redux framework.
-        I helped construct and refactor components in a separate repository that
-        are throughout the web app. I also contributed to conversations about
-        user experience, helping to design flows for onboarding, profile updates,
+        program. The website was built with React using Redux.
+        I helped construct and refactor components that
+        are usedthroughout the web app. I also contributed to conversations about
+        user experience and product scoping, helping to design flows for onboarding, profile updates,
         and inviting friends to the service.
       </div>
       <img

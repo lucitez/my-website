@@ -4,7 +4,7 @@ import './TextSection.scss'
 
 const Article = () => {
   return (
-    <div>
+    <div className='textContainer'>
       <div className='bodyText'>
         Another project I worked on while working at Rich Uncles was article.fm.
         It’s a platform for the

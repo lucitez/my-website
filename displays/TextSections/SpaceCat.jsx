@@ -4,7 +4,7 @@ import './TextSection.scss'
 
 const SpaceCat = () => {
   return (
-    <div>
+    <div className='textContainer'>
       <div className='bodyText'>
         Space Cat (working title) is a passion project of mine that I began in May
         of 2017. It’s an iOS app programmed entirely using Swift on XCode. It’s

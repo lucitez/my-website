@@ -1,3 +1,34 @@
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .xplorGif {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-self: stretch;
+    margin: 20px;
+    border: 2px solid #003660;
+    padding: 5px;
+
+    .feature {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      align-self: stretch;
+      justify-content: flex-start;
+
+      .header {
+        font-size: 20px;
+        font-weight: bold;
+        margin: 10px
+      }
+    }
+  }
+}
+
 .bodyText {
   line-height: 30px;
   text-align: justify;
@@ -11,15 +42,19 @@
     width: 100%;
 
     .languageName {
+      display: flex;
       text-transform: uppercase;
       margin: 15px 0;
       white-space: nowrap;
+      width: 20%;
+      justify-content: flex-start;
     }
 
     .proficiency {
       display: flex;
       padding-left: 20px;
-      width: 100%;
+      width: 80%;
+      justify-content: flex-start;
     }
   }
 }
@@ -42,12 +77,27 @@
   margin: 20px;
 }
 
+.gif {
+  height: 400px;
+  width: auto;
+}
+
 .portrait {
-  width: 150px;
-  height: auto;
+  display: inline-block;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   float: right;
-  margin: 5px 10px 0 50px;
+  margin: 5px 10px 0 30px;
+
+  .portrait-image {
+    display: inline;
+    border-radius: 50%;
+    height: 95%;
+    width: 95%;
+    padding: 2px;
+    border: 2px solid #003660;
+  }
 }
 
 .image-container {

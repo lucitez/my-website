@@ -1,4 +1,4 @@
-//@import '../../src/main.scss';
+@import '../../src/main.scss';
 
 .portfolio {
   overflow-x: hidden;
@@ -10,6 +10,11 @@
   }
 
   .article {
+    display: none;
+    overflow-y: hidden;
+  }
+
+  .xplor {
     display: none;
     overflow-y: hidden;
   }
@@ -27,14 +32,21 @@
   }
 
   &.Article-active {
-      .article {
+    .article {
+      display: flex;
+      animation: moveTextSectionIn 0.3s ease-in-out;
+    }
+  }
+
+  &.Xplor-active {
+    .xplor {
       display: flex;
       animation: moveTextSectionIn 0.3s ease-in-out;
     }
   }
 
   &.SpaceCat-active {
-      .spaceCat {
+    .spaceCat {
       display: flex;
       animation: moveTextSectionIn 0.3s ease-in-out;
     }

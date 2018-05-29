@@ -733,6 +733,16 @@ module.exports = ReactDOMComponentTree;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(22);
+
+
+/***/ }),
+/* 7 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  * All rights reserved.
@@ -770,16 +780,6 @@ var ExecutionEnvironment = {
 module.exports = ExecutionEnvironment;
 
 /***/ }),
-/* 7 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(21);
-
-
-/***/ }),
 /* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -797,7 +797,7 @@ module.exports = __webpack_require__(21);
 
 
 
-var _prodInvariant = __webpack_require__(22);
+var _prodInvariant = __webpack_require__(23);
 
 var ReactCurrentOwner = __webpack_require__(11);
 
@@ -1295,7 +1295,7 @@ var _prodInvariant = __webpack_require__(3),
 var CallbackQueue = __webpack_require__(67);
 var PooledClass = __webpack_require__(20);
 var ReactFeatureFlags = __webpack_require__(68);
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 var Transaction = __webpack_require__(33);
 
 var invariant = __webpack_require__(1);
@@ -3018,6 +3018,37 @@ module.exports = PooledClass;
 /* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(213);
+if(typeof content === 'string') content = [[module.i, content, '']];
+// Prepare cssTransformation
+var transform;
+
+var options = {}
+options.transform = transform
+// add the styles to the DOM
+var update = __webpack_require__(16)(content, options);
+if(content.locals) module.exports = content.locals;
+// Hot Module Replacement
+if(false) {
+	// When the styles change, update the <style> tags
+	if(!content.locals) {
+		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./TextSection.scss", function() {
+			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./TextSection.scss");
+			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+			update(newContent);
+		});
+	}
+	// When the module is disposed, remove the <style> tags
+	module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 22 */
+/***/ (function(module, exports, __webpack_require__) {
+
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {/**
  * Copyright 2013-present, Facebook, Inc.
@@ -3153,7 +3184,7 @@ module.exports = React;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3197,7 +3228,7 @@ function reactProdInvariant(code) {
 module.exports = reactProdInvariant;
 
 /***/ }),
-/* 23 */
+/* 24 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3369,7 +3400,7 @@ module.exports = ReactReconciler;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 24 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3490,37 +3521,6 @@ DOMLazyTree.queueHTML = queueHTML;
 DOMLazyTree.queueText = queueText;
 
 module.exports = DOMLazyTree;
-
-/***/ }),
-/* 25 */
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(213);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// Prepare cssTransformation
-var transform;
-
-var options = {}
-options.transform = transform
-// add the styles to the DOM
-var update = __webpack_require__(16)(content, options);
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./TextSection.scss", function() {
-			var newContent = require("!!../../node_modules/css-loader/index.js!../../node_modules/sass-loader/lib/loader.js!./TextSection.scss");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
 
 /***/ }),
 /* 26 */
@@ -4702,7 +4702,7 @@ module.exports = SyntheticMouseEvent;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var DOMNamespaces = __webpack_require__(46);
 
 var WHITESPACE_TEST = /^[ \r\n\t\f]/;
@@ -5707,7 +5707,7 @@ module.exports = getEventTarget;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var useHasFeature;
 if (ExecutionEnvironment.canUseDOM) {
@@ -5820,7 +5820,7 @@ module.exports = getEventModifierState;
 
 
 
-var DOMLazyTree = __webpack_require__(24);
+var DOMLazyTree = __webpack_require__(25);
 var Danger = __webpack_require__(128);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInstrumentation = __webpack_require__(10);
@@ -6119,7 +6119,7 @@ var _prodInvariant = __webpack_require__(3);
 var ReactPropTypesSecret = __webpack_require__(76);
 var propTypesFactory = __webpack_require__(61);
 
-var React = __webpack_require__(21);
+var React = __webpack_require__(22);
 var PropTypes = propTypesFactory(React.isValidElement);
 
 var invariant = __webpack_require__(1);
@@ -7164,7 +7164,7 @@ module.exports = getEventCharCode;
 
 
 
-var _prodInvariant = __webpack_require__(22),
+var _prodInvariant = __webpack_require__(23),
     _assign = __webpack_require__(4);
 
 var ReactNoopUpdateQueue = __webpack_require__(57);
@@ -8417,7 +8417,7 @@ module.exports = forEachAccumulated;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var contentKey = null;
 
@@ -8821,7 +8821,7 @@ module.exports = ViewportMetrics;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var escapeTextContentForBrowser = __webpack_require__(36);
 var setInnerHTML = __webpack_require__(35);
 
@@ -9676,7 +9676,7 @@ module.exports = instantiateReactComponent;
 
 var _prodInvariant = __webpack_require__(3);
 
-var React = __webpack_require__(21);
+var React = __webpack_require__(22);
 
 var invariant = __webpack_require__(1);
 
@@ -10267,9 +10267,9 @@ module.exports = getActiveElement;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(24);
+var DOMLazyTree = __webpack_require__(25);
 var DOMProperty = __webpack_require__(17);
-var React = __webpack_require__(21);
+var React = __webpack_require__(22);
 var ReactBrowserEventEmitter = __webpack_require__(37);
 var ReactCurrentOwner = __webpack_require__(11);
 var ReactDOMComponentTree = __webpack_require__(5);
@@ -10279,7 +10279,7 @@ var ReactFeatureFlags = __webpack_require__(68);
 var ReactInstanceMap = __webpack_require__(29);
 var ReactInstrumentation = __webpack_require__(10);
 var ReactMarkupChecksum = __webpack_require__(186);
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 var ReactUpdateQueue = __webpack_require__(53);
 var ReactUpdates = __webpack_require__(12);
 
@@ -10840,7 +10840,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -10970,7 +10970,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11044,7 +11044,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11310,7 +11310,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11322,7 +11322,7 @@ var _classnames = __webpack_require__(14);
 
 var _classnames2 = _interopRequireDefault(_classnames);
 
-__webpack_require__(217);
+__webpack_require__(218);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -11355,7 +11355,7 @@ exports.default = ProficiencyBar;
 "use strict";
 
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -11587,7 +11587,7 @@ module.exports = ReactChildren;
 
 
 
-var _prodInvariant = __webpack_require__(22);
+var _prodInvariant = __webpack_require__(23);
 
 var invariant = __webpack_require__(1);
 
@@ -11704,7 +11704,7 @@ module.exports = PooledClass;
 
 
 
-var _prodInvariant = __webpack_require__(22);
+var _prodInvariant = __webpack_require__(23);
 
 var ReactCurrentOwner = __webpack_require__(11);
 var REACT_ELEMENT_TYPE = __webpack_require__(58);
@@ -12125,7 +12125,7 @@ module.exports = ReactDOMFactories;
 
 
 
-var _prodInvariant = __webpack_require__(22);
+var _prodInvariant = __webpack_require__(23);
 
 var ReactPropTypeLocationNames = __webpack_require__(100);
 var ReactPropTypesSecret = __webpack_require__(101);
@@ -13290,7 +13290,7 @@ module.exports = factory;
  */
 
 
-var _prodInvariant = __webpack_require__(22);
+var _prodInvariant = __webpack_require__(23);
 
 var ReactElement = __webpack_require__(19);
 
@@ -13350,7 +13350,7 @@ module.exports = __webpack_require__(109);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDefaultInjection = __webpack_require__(110);
 var ReactMount = __webpack_require__(86);
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 var ReactUpdates = __webpack_require__(12);
 var ReactVersion = __webpack_require__(188);
 
@@ -13397,7 +13397,7 @@ if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ !== 'undefined' && typeof __REACT_DEVT
 }
 
 if (process.env.NODE_ENV !== 'production') {
-  var ExecutionEnvironment = __webpack_require__(6);
+  var ExecutionEnvironment = __webpack_require__(7);
   if (ExecutionEnvironment.canUseDOM && window.top === window.self) {
     // First check if devtools is not installed
     if (typeof __REACT_DEVTOOLS_GLOBAL_HOOK__ === 'undefined') {
@@ -13633,7 +13633,7 @@ module.exports = ARIADOMPropertyConfig;
 
 
 var EventPropagators = __webpack_require__(26);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var FallbackCompositionState = __webpack_require__(113);
 var SyntheticCompositionEvent = __webpack_require__(114);
 var SyntheticInputEvent = __webpack_require__(115);
@@ -14206,7 +14206,7 @@ module.exports = SyntheticInputEvent;
 
 var EventPluginHub = __webpack_require__(27);
 var EventPropagators = __webpack_require__(26);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(12);
 var SyntheticEvent = __webpack_require__(13);
@@ -14718,7 +14718,7 @@ module.exports = ReactOwner;
 var ReactInvalidSetStateWarningHook = __webpack_require__(120);
 var ReactHostOperationHistoryHook = __webpack_require__(121);
 var ReactComponentTreeHook = __webpack_require__(8);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var performanceNow = __webpack_require__(122);
 var warning = __webpack_require__(2);
@@ -15203,7 +15203,7 @@ module.exports = performanceNow;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var performance;
 
@@ -15640,8 +15640,8 @@ module.exports = ReactComponentBrowserEnvironment;
 
 var _prodInvariant = __webpack_require__(3);
 
-var DOMLazyTree = __webpack_require__(24);
-var ExecutionEnvironment = __webpack_require__(6);
+var DOMLazyTree = __webpack_require__(25);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var createNodesFromMarkup = __webpack_require__(129);
 var emptyFunction = __webpack_require__(9);
@@ -15693,7 +15693,7 @@ module.exports = Danger;
 
 /*eslint-disable fb-www/unsafe-html*/
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var createArrayFromMixed = __webpack_require__(130);
 var getMarkupWrap = __webpack_require__(131);
@@ -15915,7 +15915,7 @@ module.exports = createArrayFromMixed;
 
 /*eslint-disable fb-www/unsafe-html */
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var invariant = __webpack_require__(1);
 
@@ -16059,7 +16059,7 @@ var _prodInvariant = __webpack_require__(3),
 
 var AutoFocusUtils = __webpack_require__(134);
 var CSSPropertyOperations = __webpack_require__(135);
-var DOMLazyTree = __webpack_require__(24);
+var DOMLazyTree = __webpack_require__(25);
 var DOMNamespaces = __webpack_require__(46);
 var DOMProperty = __webpack_require__(17);
 var DOMPropertyOperations = __webpack_require__(75);
@@ -17098,7 +17098,7 @@ module.exports = AutoFocusUtils;
 
 
 var CSSProperty = __webpack_require__(74);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var ReactInstrumentation = __webpack_require__(10);
 
 var camelizeStyleName = __webpack_require__(136);
@@ -17670,7 +17670,7 @@ module.exports = ReactEventEmitterMixin;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 /**
  * Generate a mapping of standard vendor prefixes using the defined style property and event name.
@@ -18071,7 +18071,7 @@ module.exports = ReactDOMInput;
 
 var _assign = __webpack_require__(4);
 
-var React = __webpack_require__(21);
+var React = __webpack_require__(22);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactDOMSelect = __webpack_require__(77);
 
@@ -18370,7 +18370,7 @@ var ReactInstanceMap = __webpack_require__(29);
 var ReactInstrumentation = __webpack_require__(10);
 
 var ReactCurrentOwner = __webpack_require__(11);
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 var ReactChildReconciler = __webpack_require__(149);
 
 var emptyFunction = __webpack_require__(9);
@@ -18815,7 +18815,7 @@ module.exports = ReactMultiChild;
 
 
 
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 
 var instantiateReactComponent = __webpack_require__(78);
 var KeyEscapeUtils = __webpack_require__(52);
@@ -18977,14 +18977,14 @@ module.exports = ReactChildReconciler;
 var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
-var React = __webpack_require__(21);
+var React = __webpack_require__(22);
 var ReactComponentEnvironment = __webpack_require__(49);
 var ReactCurrentOwner = __webpack_require__(11);
 var ReactErrorUtils = __webpack_require__(41);
 var ReactInstanceMap = __webpack_require__(29);
 var ReactInstrumentation = __webpack_require__(10);
 var ReactNodeTypes = __webpack_require__(79);
-var ReactReconciler = __webpack_require__(23);
+var ReactReconciler = __webpack_require__(24);
 
 if (process.env.NODE_ENV !== 'production') {
   var checkReactTypeSpec = __webpack_require__(151);
@@ -20426,7 +20426,7 @@ module.exports = ReactServerUpdateQueue;
 
 var _assign = __webpack_require__(4);
 
-var DOMLazyTree = __webpack_require__(24);
+var DOMLazyTree = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var ReactDOMEmptyComponent = function (instantiate) {
@@ -20635,7 +20635,7 @@ var _prodInvariant = __webpack_require__(3),
     _assign = __webpack_require__(4);
 
 var DOMChildrenOperations = __webpack_require__(45);
-var DOMLazyTree = __webpack_require__(24);
+var DOMLazyTree = __webpack_require__(25);
 var ReactDOMComponentTree = __webpack_require__(5);
 
 var escapeTextContentForBrowser = __webpack_require__(36);
@@ -20875,7 +20875,7 @@ module.exports = ReactDefaultBatchingStrategy;
 var _assign = __webpack_require__(4);
 
 var EventListener = __webpack_require__(83);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var PooledClass = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactUpdates = __webpack_require__(12);
@@ -21299,7 +21299,7 @@ module.exports = ReactReconcileTransaction;
 
 
 
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 
 var getNodeForCharacterOffset = __webpack_require__(168);
 var getTextContentAccessor = __webpack_require__(66);
@@ -22008,7 +22008,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 var EventPropagators = __webpack_require__(26);
-var ExecutionEnvironment = __webpack_require__(6);
+var ExecutionEnvironment = __webpack_require__(7);
 var ReactDOMComponentTree = __webpack_require__(5);
 var ReactInputSelection = __webpack_require__(84);
 var SyntheticEvent = __webpack_require__(13);
@@ -23492,7 +23492,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -23524,19 +23524,19 @@ var _Portfolio = __webpack_require__(206);
 
 var _Portfolio2 = _interopRequireDefault(_Portfolio);
 
-var _FrontEnd = __webpack_require__(216);
+var _FrontEnd = __webpack_require__(217);
 
 var _FrontEnd2 = _interopRequireDefault(_FrontEnd);
 
-var _BackEnd = __webpack_require__(219);
+var _BackEnd = __webpack_require__(220);
 
 var _BackEnd2 = _interopRequireDefault(_BackEnd);
 
-var _AboutMe = __webpack_require__(220);
+var _AboutMe = __webpack_require__(221);
 
 var _AboutMe2 = _interopRequireDefault(_AboutMe);
 
-__webpack_require__(221);
+__webpack_require__(222);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23548,9 +23548,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var leftNavItems = ['About Me', 'Code', 'Portfolio'];
-
-var portfolioItems = ['Perks', 'Article', 'Space Cat'];
+var leftNavItems = ['About Me', 'Programming', 'Portfolio'];
 
 var App = function (_Component) {
   _inherits(App, _Component);
@@ -23598,7 +23596,7 @@ var App = function (_Component) {
         null,
         _react2.default.createElement(
           'div',
-          { className: 'header' },
+          { className: 'banner' },
           _react2.default.createElement(
             'div',
             { className: 'title' },
@@ -23639,7 +23637,7 @@ var App = function (_Component) {
                 { className: 'aboutme' },
                 _react2.default.createElement(_AboutMe2.default, null)
               ),
-              this.state.activeTab === 'Code' && _react2.default.createElement(
+              this.state.activeTab === 'Programming' && _react2.default.createElement(
                 'div',
                 { className: codeContentClass },
                 _react2.default.createElement(
@@ -23931,7 +23929,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24065,7 +24063,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24156,7 +24154,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24190,7 +24188,11 @@ var _Article = __webpack_require__(214);
 
 var _Article2 = _interopRequireDefault(_Article);
 
-var _SpaceCat = __webpack_require__(215);
+var _Xplor = __webpack_require__(215);
+
+var _Xplor2 = _interopRequireDefault(_Xplor);
+
+var _SpaceCat = __webpack_require__(216);
 
 var _SpaceCat2 = _interopRequireDefault(_SpaceCat);
 
@@ -24204,7 +24206,7 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var portfolioItems = ['Perks', 'Article', 'SpaceCat'];
+var portfolioItems = ['Perks', 'Article', 'XPLOR', 'SpaceCat'];
 
 var Portfolio = function (_Component) {
   _inherits(Portfolio, _Component);
@@ -24223,6 +24225,7 @@ var Portfolio = function (_Component) {
   _createClass(Portfolio, [{
     key: 'onTabClick',
     value: function onTabClick(newTab) {
+      console.log(newTab);
       this.setState({
         currentTab: newTab
       });
@@ -24265,6 +24268,11 @@ var Portfolio = function (_Component) {
           'div',
           { className: 'article' },
           _react2.default.createElement(_Article2.default, null)
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'xplor' },
+          _react2.default.createElement(_Xplor2.default, null)
         ),
         _react2.default.createElement(
           'div',
@@ -24317,10 +24325,11 @@ if(false) {
 
 exports = module.exports = __webpack_require__(15)(undefined);
 // imports
-
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Titillium+Web);", ""]);
+exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);", ""]);
 
 // module
-exports.push([module.i, ".portfolio {\n  overflow-x: hidden;\n  overflow-y: hidden; }\n  .portfolio .perks {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio .article {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio .spaceCat {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio.Perks-active .perks {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n  .portfolio.Article-active .article {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n  .portfolio.SpaceCat-active .spaceCat {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n", ""]);
+exports.push([module.i, ".banner {\n  background-color: #003660;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-content: center;\n  align-items: center; }\n  .banner .title {\n    color: #f7fff7;\n    align-self: center;\n    font-family: 'Titillium Web', sans-serif;\n    font-size: 40px; }\n  .banner .portrait {\n    height: 70px;\n    width: auto;\n    border-radius: 50%;\n    margin: 0 10px; }\n    .banner .portrait img {\n      border: solid white 1px; }\n\n.body {\n  display: flex;\n  justify-content: center;\n  overflow-y: visible; }\n  @media only screen and (max-width: 1000px) {\n    .body .container {\n      max-width: 80% !important; } }\n  .body .container {\n    display: flex;\n    max-width: 65%;\n    padding-top: 120px;\n    overflow: visible; }\n    .body .container .left-nav {\n      padding: 5px 0;\n      display: inline-flex;\n      max-height: 140px; }\n    .body .container .content {\n      margin-left: 100px;\n      display: inline-flex;\n      flex-direction: column;\n      font-family: 'Lato', sans-serif;\n      padding-bottom: 100px; }\n      .body .container .content .aboutme {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content.About.Me-active .aboutMe {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .links {\n        margin: 20px 20px 0;\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        align-items: center; }\n      .body .container .content .codeContent .codeGroups {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around; }\n        .body .container .content .codeContent .codeGroups .lastCodeGroup {\n          margin-left: 20px; }\n      .body .container .content .codeContent .FrontEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent .BackEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent.FrontEnd-active .FrontEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .codeContent.BackEnd-active .BackEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n\n@keyframes moveTextSectionIn {\n  0% {\n    opacity: 0;\n    transform: translateY(10px); }\n  20% {\n    opacity: 0;\n    transform: translateY(8px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0px); } }\n\n@keyframes moveTextSectionOut {\n  0% {\n    opacity: 1;\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    transform: translateY(10px); } }\n\n.portfolio {\n  overflow-x: hidden;\n  overflow-y: hidden; }\n  .portfolio .perks {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio .article {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio .xplor {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio .spaceCat {\n    display: none;\n    overflow-y: hidden; }\n  .portfolio.Perks-active .perks {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n  .portfolio.Article-active .article {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n  .portfolio.Xplor-active .xplor {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n  .portfolio.SpaceCat-active .spaceCat {\n    display: flex;\n    animation: moveTextSectionIn 0.3s ease-in-out; }\n", ""]);
 
 // exports
 
@@ -24338,7 +24347,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24388,6 +24397,7 @@ var TabTracker = function (_Component) {
   }, {
     key: 'componentWillReceiveProps',
     value: function componentWillReceiveProps(nextProps) {
+      console.log(nextProps);
       this.setState({
         currentPosition: nextProps.currentPosition
       });
@@ -24465,7 +24475,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, ".tabTracker {\n  position: relative;\n  width: 100%;\n  display: flex;\n  transition: all 0.4s ease-in-out;\n  transform: translateX(4.5%);\n  border-bottom: solid 2px black;\n  margin-bottom: 20px; }\n  .tabTracker::before {\n    content: '';\n    height: 100%;\n    width: 100%;\n    position: absolute;\n    border-bottom: solid black 2px;\n    right: 100%; }\n  .tabTracker.options-2.option-2 {\n    transform: translateX(88%); }\n  .tabTracker.options-3.option-2 {\n    transform: translateX(45%); }\n  .tabTracker.options-3.option-3 {\n    transform: translateX(88%); }\n  .tabTracker .triangle {\n    padding-top: 10px;\n    position: relative;\n    width: 0;\n    height: 0;\n    border-left: 15px solid transparent;\n    border-right: 15px solid transparent;\n    border-bottom: 15px solid black; }\n", ""]);
+exports.push([module.i, ".tabTracker {\n  position: relative;\n  width: 100%;\n  display: flex;\n  transition: all 0.4s ease-in-out;\n  transform: translateX(4%);\n  border-bottom: solid 2px black;\n  margin-bottom: 20px; }\n  .tabTracker::before {\n    content: '';\n    height: 100%;\n    width: 100%;\n    position: absolute;\n    border-bottom: solid black 2px;\n    right: 100%; }\n  .tabTracker.options-2.option-2 {\n    transform: translateX(89%); }\n  .tabTracker.options-3.option-2 {\n    transform: translateX(45%); }\n  .tabTracker.options-3.option-3 {\n    transform: translateX(89%); }\n  .tabTracker.options-4.option-2 {\n    transform: translateX(31%); }\n  .tabTracker.options-4.option-3 {\n    transform: translateX(59.5%); }\n  .tabTracker.options-4.option-4 {\n    transform: translateX(89%); }\n  .tabTracker .triangle {\n    padding-top: 10px;\n    position: relative;\n    width: 0;\n    height: 0;\n    border-left: 15px solid transparent;\n    border-right: 15px solid transparent;\n    border-bottom: 15px solid #003660; }\n", ""]);
 
 // exports
 
@@ -24481,22 +24491,22 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(25);
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Perks = function Perks() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'textContainer' },
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'While working for Rich Uncles, LLC this summer I helped develop v1.0 of the web app for Perks, a local business-focused rewards program. The website was built with React using a Redux framework. I helped construct and refactor components in a separate repository that are throughout the web app. I also contributed to conversations about user experience, helping to design flows for onboarding, profile updates, and inviting friends to the service.'
+      'While working for Rich Uncles, LLC this summer I helped develop v1.0 of the web app for Perks, a local business-focused rewards program. The website was built with React using Redux. I helped construct and refactor components that are usedthroughout the web app. I also contributed to conversations about user experience and product scoping, helping to design flows for onboarding, profile updates, and inviting friends to the service.'
     ),
     _react2.default.createElement('img', {
       className: 'image',
@@ -24530,7 +24540,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 
 
 // module
-exports.push([module.i, ".bodyText {\n  line-height: 30px;\n  text-align: justify;\n  margin: 0 20px; }\n  .bodyText .language {\n    display: flex;\n    flex-direction: row;\n    justify-content: left;\n    align-items: center;\n    width: 100%; }\n    .bodyText .language .languageName {\n      text-transform: uppercase;\n      margin: 15px 0;\n      white-space: nowrap; }\n    .bodyText .language .proficiency {\n      display: flex;\n      padding-left: 20px;\n      width: 100%; }\n\n.catImages {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n  .catImages .catImage {\n    max-height: 280px;\n    width: auto;\n    margin: 10px; }\n\n.image {\n  max-width: 550px;\n  height: auto;\n  margin: 20px; }\n\n.portrait {\n  width: 150px;\n  height: auto;\n  border-radius: 50%;\n  float: right;\n  margin: 5px 10px 0 50px; }\n\n.image-container {\n  display: flex;\n  justify-content: center; }\n  .image-container .image-mobile {\n    max-height: 400px;\n    width: auto;\n    margin: 20px;\n    align-self: center; }\n\n.caption {\n  font-size: 12px;\n  margin: 0 20px;\n  text-align: center; }\n", ""]);
+exports.push([module.i, ".textContainer {\n  display: flex;\n  flex-direction: column;\n  align-items: center; }\n  .textContainer .xplorGif {\n    display: flex;\n    flex-direction: row;\n    align-items: center;\n    justify-content: space-between;\n    align-self: stretch;\n    margin: 20px;\n    border: 2px solid #003660;\n    padding: 5px; }\n    .textContainer .xplorGif .feature {\n      display: flex;\n      flex-direction: column;\n      align-items: center;\n      align-self: stretch;\n      justify-content: flex-start; }\n      .textContainer .xplorGif .feature .header {\n        font-size: 20px;\n        font-weight: bold;\n        margin: 10px; }\n\n.bodyText {\n  line-height: 30px;\n  text-align: justify;\n  margin: 0 20px; }\n  .bodyText .language {\n    display: flex;\n    flex-direction: row;\n    justify-content: left;\n    align-items: center;\n    width: 100%; }\n    .bodyText .language .languageName {\n      display: flex;\n      text-transform: uppercase;\n      margin: 15px 0;\n      white-space: nowrap;\n      width: 20%;\n      justify-content: flex-start; }\n    .bodyText .language .proficiency {\n      display: flex;\n      padding-left: 20px;\n      width: 80%;\n      justify-content: flex-start; }\n\n.catImages {\n  display: flex;\n  flex-direction: row;\n  justify-content: space-around; }\n  .catImages .catImage {\n    max-height: 280px;\n    width: auto;\n    margin: 10px; }\n\n.image {\n  max-width: 550px;\n  height: auto;\n  margin: 20px; }\n\n.gif {\n  height: 400px;\n  width: auto; }\n\n.portrait {\n  display: inline-block;\n  width: 175px;\n  height: 175px;\n  border-radius: 50%;\n  float: right;\n  margin: 5px 10px 0 30px; }\n  .portrait .portrait-image {\n    display: inline;\n    border-radius: 50%;\n    height: 95%;\n    width: 95%;\n    padding: 2px;\n    border: 2px solid #003660; }\n\n.image-container {\n  display: flex;\n  justify-content: center; }\n  .image-container .image-mobile {\n    max-height: 400px;\n    width: auto;\n    margin: 20px;\n    align-self: center; }\n\n.caption {\n  font-size: 12px;\n  margin: 0 20px;\n  text-align: center; }\n", ""]);
 
 // exports
 
@@ -24546,18 +24556,18 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(25);
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var Article = function Article() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'textContainer' },
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
@@ -24601,18 +24611,157 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
-__webpack_require__(25);
+__webpack_require__(21);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Xplor = function Xplor() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'textContainer' },
+    _react2.default.createElement(
+      'div',
+      { className: 'bodyText' },
+      'Throughout the past year, I worked on a culminating project, known as Senior Design, for my University\'s Computer Science Program. The project is a mobile application focused on allowing users to organize trips and track their progress as they complete a trip. My team and I built the front end using React Native, and used Google Firebase to host our database. Below are some demos of different features in the app.'
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'xplorGif' },
+      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-signin.gif' }),
+      _react2.default.createElement(
+        'div',
+        { className: 'feature' },
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          'Login Flow'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'bodyText' },
+          'Users may create new accounts manually by creating a username and password. Alternatively, they may create a count by linking Facebook, Twitter, or Google accounts to the app. Then, they can log in through third party authentication or by typing in thier username and password. Our user authentication is handled through firebase authentication.'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'xplorGif' },
+      _react2.default.createElement(
+        'div',
+        { className: 'feature' },
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          'Creating Trips'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'bodyText' },
+          'When a user is creating a trip, they must provide a trip name, tags, and privacy settings. Tags exist to allow other users to find your trip, and privacy settings limit who can see your trips. From there, add locations by searching or directly through the map.'
+        )
+      ),
+      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-createtrip.gif' })
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'xplorGif' },
+      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-search.gif' }),
+      _react2.default.createElement(
+        'div',
+        { className: 'feature' },
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          'Search Feature'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'bodyText' },
+          'Users can tap on the search icon on the upper right hand side of the screen to search for points of interest, other users, and trips. Tapping on a POI result will center the map on that point. Tapping on a user will bring you to their profile page. Tapping on a tag will bring you to a screen with all trips containing that tag.'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'xplorGif' },
+      _react2.default.createElement(
+        'div',
+        { className: 'feature' },
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          'Adding POIs'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'bodyText' },
+          'If a certain location doesn\'t exist in our database, users can add them. Users can drop a pin at the center of a map, and they will be provided with a list of locations that are around that pin. These locations are filterable by category, and will only appear if they exist in Google\'s Places API. This is to avoid spam location adding.'
+        )
+      ),
+      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-addpoi.gif' })
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'xplorGif' },
+      _react2.default.createElement('img', { className: 'gif', src: '../assets/xplor-jointrip.gif' }),
+      _react2.default.createElement(
+        'div',
+        { className: 'feature' },
+        _react2.default.createElement(
+          'div',
+          { className: 'header' },
+          'Join Trips'
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'bodyText' },
+          'The application is social, so you can follow users and participate in collaborative trips with your friends. Following a user allows you to see their trips that have a privacy setting of followers only. Following a trip allows you to see the trip on your profile, but you can\'t edit or track progress. Joining a trip grants you the same control over the trip as if you created it yourself, but must be approved by the trip\'s creator.'
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'caption' },
+      'The github for this project can be found at \xA0',
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/explr-bucknell/explr', target: '_blank' },
+        'xplr-bucknell'
+      ),
+      '.'
+    )
+  );
+};
+
+exports.default = Xplor;
+
+/***/ }),
+/* 216 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(6);
+
+var _react2 = _interopRequireDefault(_react);
+
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var SpaceCat = function SpaceCat() {
   return _react2.default.createElement(
     'div',
-    null,
+    { className: 'textContainer' },
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
@@ -24642,7 +24791,7 @@ var SpaceCat = function SpaceCat() {
 exports.default = SpaceCat;
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24652,7 +24801,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24660,7 +24809,7 @@ var _ProficiencyBar = __webpack_require__(92);
 
 var _ProficiencyBar2 = _interopRequireDefault(_ProficiencyBar);
 
-__webpack_require__(25);
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24685,7 +24834,7 @@ var FrontEnd = function FrontEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'During the summer of 2017, I went from avoiding front end web programming to building my own website from scratch. This change was thanks to my constant exposure to React this summer. I assisted the lead front end engineer while working on a project called Perks, which you can find out more about in the portfolio section. This summer is the only experience I have with React, but I spent more than half of my time immersed in the language, and developed a strong grasp of its strengths and weaknesses.'
+      'During the summer of 2017, I went from understanding the basics of HTML and CSS to building this website from scratch. This change was thanks to my constant exposure to React this summer. I assisted the lead front end engineer while working on a project called Perks, which you can find out more about in the portfolio section. I spent the better part of four months training my web development skills, and have become a confident web programmer.'
     ),
     _react2.default.createElement(
       'div',
@@ -24704,7 +24853,7 @@ var FrontEnd = function FrontEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'My exposure to React Redux was somewhat limited, but that exposure really helped me understand the benefits of utilizing actions and reducers. Redux allows for easier testing, especially when using it with helpful plugins like Chrome\'s Redux plugin.'
+      'I learned Redux after gaining a proficiency using React. Using Redux, I have gained a stronger understanding of how state should work in a React project, and best practices for managing said state using Redux\'s actions and reducers.'
     ),
     _react2.default.createElement(
       'div',
@@ -24717,13 +24866,13 @@ var FrontEnd = function FrontEnd() {
       _react2.default.createElement(
         'div',
         { className: 'proficiency' },
-        _react2.default.createElement(_ProficiencyBar2.default, { percentage: '80' })
+        _react2.default.createElement(_ProficiencyBar2.default, { percentage: '70' })
       )
     ),
     _react2.default.createElement(
       'div',
       null,
-      'I\'ve known a bit about how to use HTML since I began my CS career back in High School, but only really began to develop a strong understanding of it this summer. Since then, I\'ve been increasing my level of skill by using HTML within my JSX code.'
+      'My experience using vanilla HTML is limited, but an understanding of how certain tags work, especially the more complex and frequently used ones such as form, is important when using any JavaScript framework.'
     ),
     _react2.default.createElement(
       'div',
@@ -24742,7 +24891,7 @@ var FrontEnd = function FrontEnd() {
     _react2.default.createElement(
       'div',
       null,
-      'I have been honing my CSS skills over the past year or so and seen a significant amount of improvement in my capabilities. Since learning about Sass, I\'ve never looked back. It takes all of the confusing, poorly structured aspects of CSS and makes things much easier to work with. I am also a believer that CSS is very underrated in the creative opportunities it unlocks when it comes to things like animations.'
+      'I have been honing my CSS skills over the past year or so and seen a significant amount of improvement in my capabilities. My ability to apply my knowledge of CSS was boosted when I learned about the preprocessor SCSS, which has been incredibly helpful in increasing the readibility and structure of a CSS page. I have also taken the time to learn about CSS animations, which can make a user feel more welcome and encourage user interaction.'
     )
   );
 };
@@ -24750,13 +24899,13 @@ var FrontEnd = function FrontEnd() {
 exports.default = FrontEnd;
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(218);
+var content = __webpack_require__(219);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24781,7 +24930,7 @@ if(false) {
 }
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(15)(undefined);
@@ -24795,7 +24944,7 @@ exports.push([module.i, ".mainBar {\n  width: 100%;\n  height: 10px;\n  border: 
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24805,7 +24954,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24813,7 +24962,7 @@ var _ProficiencyBar = __webpack_require__(92);
 
 var _ProficiencyBar2 = _interopRequireDefault(_ProficiencyBar);
 
-__webpack_require__(25);
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24832,13 +24981,13 @@ var BackEnd = function BackEnd() {
       _react2.default.createElement(
         'div',
         { className: 'proficiency' },
-        _react2.default.createElement(_ProficiencyBar2.default, { percentage: '90' })
+        _react2.default.createElement(_ProficiencyBar2.default, { percentage: '80' })
       )
     ),
     _react2.default.createElement(
       'div',
       null,
-      'When it comes to most lines of code written, Java definitely takes the cake for me by a long shot. I prefer utilizing object oriented methodologies when programming, so it\'s no surprise I have such an affinity for Java. My first major project in Java was a tanks game I created with a team of four during my Sophomore year of college. Most recently, I created the entire back end for a web app called article.fm, which you can find out more about in the portfolio section of this site.'
+      'When it comes to most lines of code written, Java stands out by a large margin. I prefer utilizing object oriented methodologies when programming, so it\'s no surprise I have such an affinity for Java. My first major project in Java was a tanks game I created with a team of four during my Sophomore year of college. Most recently, I created the back end for a web app called article.fm, which you can find out more about in the portfolio section of this site.'
     ),
     _react2.default.createElement(
       'div',
@@ -24860,10 +25009,10 @@ var BackEnd = function BackEnd() {
       'I have completed a few really cool projects using Python, including two of my favorites. One was a\xA0',
       _react2.default.createElement(
         'a',
-        { href: 'https://github.com/lucitez/Connect4' },
+        { href: 'https://github.com/lucitez/Connect4', target: '_blank' },
         'Connect 4 Game'
       ),
-      ' complete with some basic AI. Another was a data visualization of concentration of Twitter Phrases that I am unfortunately not able to upload on my github.'
+      ' complete with some basic AI. Another was a data visualization of concentration of Twitter Phrases that I am unfortunately not able to upload on my github due to size limitations.'
     ),
     _react2.default.createElement(
       'div',
@@ -24890,7 +25039,7 @@ var BackEnd = function BackEnd() {
 exports.default = BackEnd;
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -24900,7 +25049,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _react = __webpack_require__(7);
+var _react = __webpack_require__(6);
 
 var _react2 = _interopRequireDefault(_react);
 
@@ -24908,7 +25057,7 @@ var _Icon = __webpack_require__(91);
 
 var _Icon2 = _interopRequireDefault(_Icon);
 
-__webpack_require__(25);
+__webpack_require__(21);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -24920,39 +25069,39 @@ var AboutMe = function AboutMe() {
       'div',
       { className: 'portrait' },
       _react2.default.createElement('img', {
-        src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png',
-        className: 'image portrait'
+        src: 'https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.jpg',
+        className: 'portrait-image'
       })
     ),
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'Hi there, thanks for visiting my site! I am a Senior at Bucknell University, majoring in Computer Science and Engineering. I\'m from Los Angeles, California. I like to spend my free time playing and watching soccer, listening to music, and watching movies and cartoons.',
+      'Hi there, thanks for visiting my site! I am a recent graduate from Bucknell University, majoring in Computer Science and Engineering. I\'m from Los Angeles, California. I have a passion for front end development, though I have experience across the stack. Keep looking around to find out more about me, enjoy! You can find all the code for this website\xA0',
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/lucitez/my-website', target: '_blank' },
+        'here'
+      ),
+      '.',
       _react2.default.createElement('br', null)
     ),
     _react2.default.createElement('br', null),
     _react2.default.createElement(
       'div',
       { className: 'bodyText' },
-      'I have a passion for front end development, though I have experience across the stack. Keep looking around to find out more about me, enjoy! You can find all the code for this website\xA0',
-      _react2.default.createElement(
-        'a',
-        { href: 'https://github.com/lucitez/my-website' },
-        'here'
-      ),
-      '.'
+      'I like to spend my free time playing and watching soccer, listening to music, and watching movies and cartoons.'
     ),
     _react2.default.createElement(
       'div',
       { className: 'links' },
       _react2.default.createElement(
         'a',
-        { href: 'https://www.linkedin.com/in/lucas-gregory-02b9b7aa/' },
+        { href: 'https://www.linkedin.com/in/lucas-gregory-02b9b7aa/', target: '_blank' },
         _react2.default.createElement(_Icon2.default, { name: 'linkedin', size: 'md', type: 'link' })
       ),
       _react2.default.createElement(
         'a',
-        { href: 'https://github.com/lucitez' },
+        { href: 'https://github.com/lucitez', target: '_blank' },
         _react2.default.createElement(_Icon2.default, { name: 'github', size: 'md', type: 'link' })
       ),
       _react2.default.createElement(
@@ -24967,13 +25116,13 @@ var AboutMe = function AboutMe() {
 exports.default = AboutMe;
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(222);
+var content = __webpack_require__(223);
 if(typeof content === 'string') content = [[module.i, content, '']];
 // Prepare cssTransformation
 var transform;
@@ -24998,7 +25147,7 @@ if(false) {
 }
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(15)(undefined);
@@ -25007,7 +25156,7 @@ exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Tit
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);", ""]);
 
 // module
-exports.push([module.i, ".header {\n  background-color: #003660;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-content: center;\n  align-items: center; }\n  .header .title {\n    color: #f7fff7;\n    align-self: center;\n    font-family: 'Titillium Web', sans-serif;\n    font-size: 40px; }\n  .header .portrait {\n    height: 70px;\n    width: auto;\n    border-radius: 50%;\n    margin: 0 10px; }\n    .header .portrait img {\n      border: solid white 1px; }\n\n.body {\n  display: flex;\n  justify-content: center;\n  overflow-y: visible;\n  min-height: 800px; }\n  @media only screen and (max-width: 1000px) {\n    .body .container {\n      max-width: 80% !important; } }\n  .body .container {\n    display: flex;\n    max-width: 60%;\n    padding-top: 120px;\n    overflow: visible; }\n    .body .container .left-nav {\n      padding: 5px 0;\n      display: inline-flex;\n      max-height: 140px; }\n    .body .container .content {\n      margin-left: 100px;\n      display: inline-flex;\n      flex-direction: column;\n      font-family: 'Lato', sans-serif;\n      padding-bottom: 100px; }\n      .body .container .content .aboutme {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content.About.Me-active .aboutMe {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .links {\n        margin: 20px 20px 0;\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        align-items: center; }\n      .body .container .content .codeContent .codeGroups {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around; }\n        .body .container .content .codeContent .codeGroups .lastCodeGroup {\n          margin-left: 20px; }\n      .body .container .content .codeContent .FrontEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent .BackEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent.FrontEnd-active .FrontEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .codeContent.BackEnd-active .BackEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n\n@keyframes moveTextSectionIn {\n  0% {\n    opacity: 0;\n    transform: translateY(10px); }\n  20% {\n    opacity: 0;\n    transform: translateY(8px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0px); } }\n\n@keyframes moveTextSectionOut {\n  0% {\n    opacity: 1;\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    transform: translateY(10px); } }\n", ""]);
+exports.push([module.i, ".banner {\n  background-color: #003660;\n  display: flex;\n  height: 100px;\n  justify-content: center;\n  align-content: center;\n  align-items: center; }\n  .banner .title {\n    color: #f7fff7;\n    align-self: center;\n    font-family: 'Titillium Web', sans-serif;\n    font-size: 40px; }\n  .banner .portrait {\n    height: 70px;\n    width: auto;\n    border-radius: 50%;\n    margin: 0 10px; }\n    .banner .portrait img {\n      border: solid white 1px; }\n\n.body {\n  display: flex;\n  justify-content: center;\n  overflow-y: visible; }\n  @media only screen and (max-width: 1000px) {\n    .body .container {\n      max-width: 80% !important; } }\n  .body .container {\n    display: flex;\n    max-width: 65%;\n    padding-top: 120px;\n    overflow: visible; }\n    .body .container .left-nav {\n      padding: 5px 0;\n      display: inline-flex;\n      max-height: 140px; }\n    .body .container .content {\n      margin-left: 100px;\n      display: inline-flex;\n      flex-direction: column;\n      font-family: 'Lato', sans-serif;\n      padding-bottom: 100px; }\n      .body .container .content .aboutme {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content.About.Me-active .aboutMe {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .links {\n        margin: 20px 20px 0;\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around;\n        align-items: center; }\n      .body .container .content .codeContent .codeGroups {\n        display: flex;\n        flex-direction: row;\n        justify-content: space-around; }\n        .body .container .content .codeContent .codeGroups .lastCodeGroup {\n          margin-left: 20px; }\n      .body .container .content .codeContent .FrontEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent .BackEnd {\n        display: none;\n        animation: moveTextSectionOut 0.3s ease-in-out; }\n      .body .container .content .codeContent.FrontEnd-active .FrontEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n      .body .container .content .codeContent.BackEnd-active .BackEnd {\n        display: flex;\n        animation: moveTextSectionIn 0.3s ease-in-out; }\n\n@keyframes moveTextSectionIn {\n  0% {\n    opacity: 0;\n    transform: translateY(10px); }\n  20% {\n    opacity: 0;\n    transform: translateY(8px); }\n  100% {\n    opacity: 1;\n    transform: translateY(0px); } }\n\n@keyframes moveTextSectionOut {\n  0% {\n    opacity: 1;\n    transform: translateY(0px); }\n  100% {\n    opacity: 0;\n    transform: translateY(10px); } }\n", ""]);
 
 // exports
 

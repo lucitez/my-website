@@ -15,14 +15,8 @@ import './main.scss'
 
 let leftNavItems = [
   'About Me',
-  'Code',
+  'Programming',
   'Portfolio'
-]
-
-let portfolioItems = [
-  'Perks',
-  'Article',
-  'Space Cat'
 ]
 
 class App extends Component {
@@ -59,7 +53,7 @@ class App extends Component {
     })
     return (
       <div>
-        <div className='header'>
+        <div className='banner'>
           <div className='title'>Lucas Gregory</div>
         </div>
         <div className='body'>
@@ -82,7 +76,7 @@ class App extends Component {
               <div className='aboutme'>
                 <AboutMe />
               </div>
-              {this.state.activeTab === 'Code' &&
+              {this.state.activeTab === 'Programming' &&
                 <div className={codeContentClass}>
                   <div className='codeGroups'>
                     <IconGroup

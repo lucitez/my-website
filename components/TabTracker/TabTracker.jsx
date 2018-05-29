@@ -21,6 +21,7 @@ class TabTracker extends Component {
   }
 
   componentWillReceiveProps (nextProps) {
+    console.log(nextProps)
     this.setState ({
       currentPosition: nextProps.currentPosition
     })

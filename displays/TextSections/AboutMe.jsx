@@ -9,32 +9,33 @@ const AboutMe = () => {
     <div>
       <div className='portrait'>
         <img
-          src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.png'
-          className='image portrait'
+          src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.jpg'
+          className='portrait-image'
         />
       </div>
       <div className='bodyText'>
-        Hi there, thanks for visiting my site! I am a Senior at
+        Hi there, thanks for visiting my site! I am a recent graduate from
         Bucknell University, majoring in Computer Science and Engineering.
-        I'm from Los Angeles, California. I like to spend my free time playing
-        and watching soccer, listening to music, and watching movies and cartoons.
+        I'm from Los Angeles, California.
+        I have a passion for front end development, though I have experience
+        across the stack. Keep looking around to find out more about me,
+        enjoy! You can find all the code for this website&nbsp;
+        <a href='https://github.com/lucitez/my-website' target='_blank'>
+          here
+        </a>
+        .
         <br />
       </div>
         <br />
       <div className='bodyText'>
-        I have a passion for front end development, though I have experience
-        across the stack. Keep looking around to find out more about me,
-        enjoy! You can find all the code for this website&nbsp;
-        <a href='https://github.com/lucitez/my-website'>
-        here
-        </a>
-        .
+        I like to spend my free time playing
+        and watching soccer, listening to music, and watching movies and cartoons.
       </div>
       <div className='links'>
-        <a href='https://www.linkedin.com/in/lucas-gregory-02b9b7aa/'>
+        <a href='https://www.linkedin.com/in/lucas-gregory-02b9b7aa/' target='_blank'>
           <Icon name='linkedin' size='md' type='link'/>
         </a>
-        <a href='https://github.com/lucitez'>
+        <a href='https://github.com/lucitez' target='_blank'>
           <Icon name='github' size='md' type='link'/>
         </a>
         <div className='email'>

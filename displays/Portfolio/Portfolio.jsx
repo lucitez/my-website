@@ -9,11 +9,13 @@ import Nav from '../../components/Nav/Nav.jsx'
 import NavItem from '../../components/Nav/NavItem.jsx'
 import Perks from '../TextSections/Perks.jsx'
 import Article from '../TextSections/Article.jsx'
+import Xplor from '../TextSections/Xplor.jsx'
 import SpaceCat from '../TextSections/SpaceCat.jsx'
 
 let portfolioItems = [
   'Perks',
   'Article',
+  'XPLOR',
   'SpaceCat'
 ]
 
@@ -27,6 +29,7 @@ class Portfolio extends Component {
   }
 
   onTabClick (newTab) {
+    console.log(newTab)
     this.setState({
       currentTab: newTab
     })
@@ -53,11 +56,14 @@ class Portfolio extends Component {
           totalPositions={portfolioItems.length}
           currentPosition={portfolioItems.indexOf(this.state.currentTab) + 1}
         />
-        <div className='perks'>
+      <div className='perks'>
           <Perks />
         </div>
         <div className='article'>
           <Article />
+        </div>
+        <div className='xplor'>
+          <Xplor />
         </div>
         <div className='spaceCat'>
           <SpaceCat />
