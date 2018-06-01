@@ -16,6 +16,7 @@ const Article = () => {
       <img
         className='image'
         src='https://s3-us-west-1.amazonaws.com/lrg.life/images/article-feed.png'
+        alt='Article.fm Landing Page'
       />
       <div className='bodyText'>
         I built this web app from the ground up, developing both client and server side,

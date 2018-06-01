@@ -16,30 +16,31 @@
   }
 }
 
-.navItem {
+.navItemWrapper {
   cursor: pointer;
-  padding: 0;
-  text-align: right;
-  font-family: 'Open Sans', sans-serif;
-  white-space: nowrap;
-
-  &.is-active {
-    color: #ee9102;
-  }
-
-  &.hover-effect {
-    &.orientation-vertical {
-      &:hover {
-        transform: translateX(-10px);
-        transition: all 0.1s ease-in-out;
+  &:hover {
+    .navItem {
+      &.hover-effect {
+        &.orientation-vertical {
+          transform: translateX(-10px);
+          transition: all 0.1s ease-in-out;
+        }
+        &.orientation-horizontal {
+          transform: translateY(-5px);
+          transition: all 0.1s ease-in-out;
+        }
       }
     }
+  }
 
-    &.orientation-horizontal {
-      &:hover {
-        transform: translateY(-5px);
-        transition: all 0.1s ease-in-out;
-      }
+  .navItem {
+    padding: 0;
+    text-align: right;
+    font-family: 'Open Sans', sans-serif;
+    white-space: nowrap;
+
+    &.is-active {
+      color: #ee9102;
     }
   }
 }

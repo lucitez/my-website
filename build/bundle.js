@@ -10908,8 +10908,12 @@ var NavItem = function (_Component) {
       }, _defineProperty(_classNames, 'orientation-' + this.props.orientation, this.props.orientation), _defineProperty(_classNames, 'hover-effect', this.props.hover), _classNames));
       return _react2.default.createElement(
         'div',
-        { className: navItemClass, onClick: this._onClick.bind(this) },
-        this.props.value
+        { className: 'navItemWrapper', onClick: this._onClick.bind(this) },
+        _react2.default.createElement(
+          'div',
+          { className: navItemClass },
+          this.props.value
+        )
       );
     }
   }]);
@@ -23771,7 +23775,7 @@ exports = module.exports = __webpack_require__(15)(undefined);
 exports.push([module.i, "@import url(https://fonts.googleapis.com/css?family=Open+Sans);", ""]);
 
 // module
-exports.push([module.i, ".nav {\n  display: inline-flex; }\n  .nav.orientation-horizontal {\n    flex-direction: row;\n    padding: 0 20px;\n    justify-content: space-between;\n    width: -webkit-fill-available; }\n  .nav.orientation-vertical {\n    flex-direction: column;\n    justify-content: space-between; }\n\n.navItem {\n  cursor: pointer;\n  padding: 0;\n  text-align: right;\n  font-family: 'Open Sans', sans-serif;\n  white-space: nowrap; }\n  .navItem.is-active {\n    color: #ee9102; }\n  .navItem.hover-effect.orientation-vertical:hover {\n    transform: translateX(-10px);\n    transition: all 0.1s ease-in-out; }\n  .navItem.hover-effect.orientation-horizontal:hover {\n    transform: translateY(-5px);\n    transition: all 0.1s ease-in-out; }\n", ""]);
+exports.push([module.i, ".nav {\n  display: inline-flex; }\n  .nav.orientation-horizontal {\n    flex-direction: row;\n    padding: 0 20px;\n    justify-content: space-between;\n    width: -webkit-fill-available; }\n  .nav.orientation-vertical {\n    flex-direction: column;\n    justify-content: space-between; }\n\n.navItemWrapper {\n  cursor: pointer; }\n  .navItemWrapper:hover .navItem.hover-effect.orientation-vertical {\n    transform: translateX(-10px);\n    transition: all 0.1s ease-in-out; }\n  .navItemWrapper:hover .navItem.hover-effect.orientation-horizontal {\n    transform: translateY(-5px);\n    transition: all 0.1s ease-in-out; }\n  .navItemWrapper .navItem {\n    padding: 0;\n    text-align: right;\n    font-family: 'Open Sans', sans-serif;\n    white-space: nowrap; }\n    .navItemWrapper .navItem.is-active {\n      color: #ee9102; }\n", ""]);
 
 // exports
 

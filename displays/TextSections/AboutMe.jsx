@@ -11,6 +11,7 @@ const AboutMe = () => {
         <img
           src='https://s3-us-west-1.amazonaws.com/lrg.life/images/My+Face.jpg'
           className='portrait-image'
+          alt='Lucas Gregory'
         />
       </div>
       <div className='bodyText'>

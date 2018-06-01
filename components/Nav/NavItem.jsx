@@ -36,8 +36,10 @@ class NavItem extends Component {
       'hover-effect': this.props.hover
     })
     return (
-      <div className={navItemClass} onClick={this._onClick.bind(this)}>
-        {this.props.value}
+      <div className='navItemWrapper' onClick={this._onClick.bind(this)}>
+        <div className={navItemClass} >
+          {this.props.value}
+        </div>
       </div>
     )
   }
